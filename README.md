@@ -41,17 +41,6 @@ DELETE TABLE tableName
 ## 📚 Background
 This project was developed after researching SQL syntax and concepts. It provided a foundational understanding of how database queries are structured and processed, and how similar logic can be implemented in C++. Parsing input, managing structured data, and designing a command interface were key challenges tackled in this project.
 
-Data Structure / Class | Purpose
-std::map<std::string, Table> | Stores all tables by name. Enables quick access and management of table data.
-std::multimap<std::string, std::string> (Table) | Stores rows of data, allowing multiple entries with the same column name.
-std::unordered_map<std::string, std::string> | Represents a single row as key-value pairs of column names and values.
-std::vector<std::vector<Cell>> (Spreadsheet) | Manages the visual grid of cells used to display table data in the GUI.
-std::stack<std::string> (Backspace) | Tracks previous input states to support undo functionality.
-std::map<std::string, Spreadsheet> | Links each table to its visual Spreadsheet view for rendering.
-std::vector<Row>, std::vector<Header> | Used by Spreadsheet to structure visual rows and column headers.
-QueryParser | Tokenizes and parses SQL-like input into a structured std::map of key-value pairs.
-TextInput | Custom SFML input field that handles user text, backspace, undo, and cursor control.
-
 ## 💡 What I Learned
 - How to parse SQL-like commands and tokenize input.
 - How databases manage table creation, row insertion, and querying.
