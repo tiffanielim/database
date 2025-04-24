@@ -12,25 +12,30 @@ The engine supports basic operations using a SQL-style syntax:
 ### 📄 Create a Table
 ```sql
 CREATE TABLE tableName (col1, col2, col3)
+```
 - Creates a new table with the specified column names.
 
 ### ➕ Insert Into a Table
 ```sql
 INSERT INTO tableName (col1, col2, col3) VALUES (val1, val2, val3)
+```
 - Inserts a new row of values into the specified table.
 
 ### 🔍 Select Columns
 ```sql
 SELECT col1, col2 FROM tableName WHERE (col1)
+```
 - Returns selected columns from the table based on a condition. <br />
 
 To select a single column:
 ```sql
 SELECT col1 FROM tableName WHERE (col1)
+```
 
 ### 🗑 Delete a Table
 ```sql
 DELETE TABLE tableName
+```
 - Removes the entire table from the database.
 
 ## 📚 Background
