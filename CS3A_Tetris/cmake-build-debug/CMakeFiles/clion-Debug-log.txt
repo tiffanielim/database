@@ -1,0 +1,5 @@
+/Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -DCMAKE_BUILD_TYPE=Debug -DCMAKE_MAKE_PROGRAM=/Applications/CLion.app/Contents/bin/ninja/mac/ninja -G Ninja -S /Users/tiffanielim/CLionProjects/CS3A_Tetris -B /Users/tiffanielim/CLionProjects/CS3A_Tetris/cmake-build-debug
+-- Found SFML 2.6.1 in /usr/local/lib/cmake/SFML
+-- Configuring done (0.1s)
+-- Generating done (0.0s)
+-- Build files have been written to: /Users/tiffanielim/CLionProjects/CS3A_Tetris/cmake-build-debug

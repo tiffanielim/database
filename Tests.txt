@@ -1,0 +1,148 @@
+#include <iostream>
+//#include <SFML/Graphics.hpp>
+//#include "Spreadsheet.h"
+//#include <string>
+//#include "QueryParser.h"
+//#include "Table.h"
+//#include "Database.h"
+//
+//int main() {
+//
+//    /// test spreadsheet
+//    Spreadsheet sheet(0, 0);
+//
+//    Header header1("Name:");
+//    Header header2("Age:");
+//    Header header3("City:");
+//    Header header4("Favorite Cookie:");
+//    sheet.addHeader(header1);
+//    sheet.addHeader(header2);
+//    sheet.addHeader(header3);
+//    sheet.addHeader(header4);
+//
+//    Row row1;
+//    Row row2;
+//    Cell cell1, cell2, cell3, cell4;
+//    cell1.setValue("Tiffanie");
+//    cell2.setValue("19");
+//    cell3.setValue("Pasadena");
+//    cell4.setValue("Chocolate Chip");
+//    row1.addCell(cell1);
+//    row1.addCell(cell2);
+//    row1.addCell(cell3);
+//    row1.addCell(cell4);
+//
+//    sheet.addRow(row1);
+//
+//    QueryParser parser;
+//
+//    std::string query1 = "SELECT column1, column2 FROM table WHERE column3 = 'value'";
+//    std::string query2 = "INSERT INTO table VALUES (1, 'value')";
+//
+//    try {
+//        auto result1 = parser.parse(query1);
+//        auto result2 = parser.parse(query2);
+//
+//        std::cout << "Parsed Query 1:\n";
+//        for (const auto &[key, value] : result1) {
+//            std::cout << key << ": " << value << "\n";
+//        }
+//
+//        std::cout << "\nParsed Query 2:\n";
+//        for (const auto &[key, value] : result2) {
+//            std::cout << key << ": " << value << "\n";
+//        }
+//    } catch (const std::exception &e) {
+//        std::cerr << "Error: " << e.what() << "\n";
+//    }
+//
+//    ///test table
+//
+//    try {
+//        // Define columns for the table
+//        std::vector<std::string> columns = {"id", "name", "age"};
+//
+//        // Create a table
+//        Table table(columns);
+//
+//        // Insert valid data
+//        table.insert({"id", "1"});
+//        table.insert({"name", "Alice"});
+//        table.insert({"age", "30"});
+//
+//        // Validate column existence
+//        if (table.hasColumn("name")) {
+//            std::cout << "Column 'name' exists!\n";
+//        }
+//
+//        // Print all data
+//        std::cout << "Table data:\n";
+//        table.printData();
+//
+//        // Attempt to insert into a non-existent column
+//        table.insert({"salary", "50000"}); // Should throw an exception
+//    } catch (const std::invalid_argument& e) {
+//        std::cerr << "Error: " << e.what() << "\n";
+//    }
+//
+//
+//    /// test load from vector
+//
+//    std::vector<std::vector<std::string>> data = {
+//            {"Name", "Age", "City", "Favorite Cookie: "},
+//            {"Evonne", "19", "Irvine", "Red Velvet"},
+//            {"Rachel", "19", "Orange County", "Matcha"},
+//            {"Tiffanie", "19", "Pasadena", " "}
+//    };
+//
+//    sheet.loadFromVector(data);
+//
+//    sf::RenderWindow window(sf::VideoMode(800, 600), "Spreadsheet");
+//    while (window.isOpen()) {
+//        sf::Event event;
+//        while (window.pollEvent(event)) {
+//            if (event.type == sf::Event::Closed) {
+//                window.close();
+//            }
+//        }
+//        window.clear(sf::Color(255, 209, 223));
+//        sheet.draw(window);
+//        window.display();
+//    }
+//
+//    ///test database
+//
+//    Database db;
+//    db.query("CREATE TABLE users (id, name, age)");
+//
+//    db.query("INSERT INTO users (id, name, age) VALUES (1, 'Alice', 30)");
+//    try {
+//        Table& table = db.getTable("users");
+//        std::cout << "Data in 'users' table after INSERT:\n";
+//        table.printData();
+//    } catch (const std::exception& e) {
+//        std::cerr << "Error: " << e.what() << "\n";
+//    }
+//
+//    std::cout << std::endl;
+//
+//    db.query("SELECT id, name FROM users WHERE (id)");
+//    std::cout << "SELECT query results:\n";
+//    for (const auto& [column, rows] : db.lastQueryResults) {
+//        std::cout << column << ":\n";
+//        for (const auto& row : rows) {
+//            std::cout << "  " << row << "\n";
+//        }
+//    }
+//    std::cout << std::endl;
+//
+//        db.query("DELETE TABLE users");
+//    try {
+//        Table& table = db.getTable("users");
+//    } catch (const std::exception& e) {
+//        std::cerr << "Error after DELETE: " << e.what() << "\n";
+//    }
+//    std::cout << std::endl;
+//
+//    return 0;
+//}
